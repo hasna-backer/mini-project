@@ -1,0 +1,34 @@
+{%extends "admin/adminindex.html" %}
+{% block body %}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body><form><table width="200" border="1">
+  <tbody>
+    <tr>
+      <td>&nbsp;#</td>
+      <td>&nbsp;amount</td>
+      <td>&nbsp;amount paid</td>
+      <td>balance&nbsp;</td>
+      <td>date time&nbsp;</td>
+      <td>status&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{i['amount']}}</td>
+      <td>&nbsp;{{i['amount paid']}}</td>
+      <td>&nbsp;{{i['balance']}}</td>
+      <td>&nbsp;{{i['datetime']}}</td>
+      <td>&{{i['status']}};</td>
+    </tr>
+  {%endfor%
+  </tbody>
+</table>
+</form>
+</body>
+</html>

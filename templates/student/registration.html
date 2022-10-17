@@ -1,0 +1,125 @@
+{%extends "signin.html" %}
+{% block body %}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/student_registration_post"  method="post" enctype="multipart/form-data"><table width="200" border="1">
+  <tbody>
+    <tr>
+      <td>&nbsp;first name</td>
+<td><label for="textfield6">&nbsp;</label>
+  <input type="text" name="textfield6" id="textfield6"></td></tr>
+    <tr>
+      <td>&nbsp;last name</td>
+      <td><label for="textfield">&nbsp;</label>
+        <input type="text" name="textfield" id="textfield"></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;address</td>
+      
+    </tr>
+	  <tr>
+      <td>&nbsp;place</td>
+      <td><label for="textfield5">&nbsp;</label>
+        <input type="text" name="textfield5" id="textfield5"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;House Name</td>
+      <td><label for="textfield5">&nbsp;</label>
+        <input type="text" name="textfield55" id="textfield5"></td>
+    </tr>
+    
+    <tr>
+      <td>&nbsp;post</td>
+      <td><label for="textfield2">&nbsp;</label>
+        <input type="text" name="textfield2" id="textfield2"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;city</td>
+      <td><label for="textfield3">&nbsp;</label>
+        <input type="text" name="textfield3" id="textfield3"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;pin</td>
+      <td><label for="textfield4">&nbsp;</label>
+        <input type="text" name="textfield4" id="textfield4"></td>
+    </tr>
+
+	  <tr>
+      <td>&nbsp;gender</td>
+      <td><input type="radio" name="radio" id="radio" value="male">
+        male
+        <label for="radio">
+          <input type="radio" name="radio" id="radio2" value="female">
+        &nbsp;female&nbsp;&nbsp; </label></td>
+    </tr>
+	  <tr>
+      <td>&nbsp;date of birth</td>
+      <td><label for="textfield8">Text Field:</label>
+        <input type="date" name="textfield8" id="textfield8"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;email</td>
+      <td><label for="textfield4">&nbsp;</label>
+        <input type="email" name="mail" id="mail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ></td>
+    </tr>
+	  <tr>
+      <td>&nbsp;phone</td>
+      <td><label for="textfield7">&nbsp;</label>
+        <input type="text" name="textfield7" id="textfield7">
+        <label for="number">&nbsp;</label>
+        </td>
+    </tr>
+	  
+	  <tr>
+      <td>&nbsp;nationality</td>
+      <td><label for="select">Select:</label>
+        <select name="select" id="select">
+
+          <option>Indian</option>
+          <option>Afghan</option>
+          <option>Malaysian</option>
+          <option>Omani</option>
+
+        </select></td>
+    </tr>
+
+
+    <tr>
+      <td>&nbsp;qualification</td>
+      <td><label for="select2">Select:</label>
+        <select name="qual" id="select2">
+          <option>DIPLOMA</option>
+          <option>PLUS TWO</option>
+          <option>UG</option>
+          <option>PG</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;upload photo</td>
+      <td><input name="pic" type="file"></td>
+    </tr>
+<tr>
+          <td>&nbsp;Password</td>
+      <td><input name="password" type="password" id="npassword"></td>
+    </tr>
+
+    <tr>
+          <td>&nbsp;Confirm Password</td>
+      <td><input name="password" type="pwd2" id="cpassword"></td>
+    </tr>
+	  <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="submit">        &nbsp;</td>
+      
+    </tr>
+  </tbody>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}
+

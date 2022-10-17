@@ -1,0 +1,42 @@
+{% extends "admin/adminindex.html" %}
+{% block body%}
+
+
+
+<!--<!doctype html>-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="card p-3" style="border-radius:20px;border:solid green">
+	<form name="form1" method="post">
+      <table width="200" border="0" class="table table-hover table-borderless">
+  <tbody>
+    <tr style="background-color: black;color: white">
+      <th>&nbsp;#</th>
+      <th>&nbsp;category</th>
+       <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+
+    <tr>
+      <td>&nbsp;{{loop.index}}</td>
+      <td>&nbsp;{{i['cname']}}</td>
+
+      <td><a href="/admin_delete_category/{{i['cat_id']}}#why-us" ONCLICK="return confirm('Are You Sure')">delete</a></td>
+
+      
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+      <td><a href="/admin_add_category#why-us" class="btn btn-success">add</a></td>
+</form>
+</div>
+</body>
+</html>
+
+{% endblock %}

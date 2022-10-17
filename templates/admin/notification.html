@@ -1,0 +1,39 @@
+{%extends "admin/adminindex.html" %}
+{% block body %}
+<!--<!doctype html>-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="card p-3" style="border-radius:20px;border:solid green">
+	<table width="200" border="0"  class="table  table-borderless">
+  <tbody>
+    <tr style="background-color:black;color:white">
+      <td>&nbsp;#</td>
+      <th>&nbsp;type</th>
+      <th>&nbsp;notification</th>
+      <th>&nbsp;date</th>
+      <td></td>
+
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>&nbsp;{{i['type']}}</td>
+      <td>&nbsp;{{i['notification']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td> <p><a href="/admin_delete_notification/{{ i['noti_id']}}" ONCLICK="return confirm('Are You Sure')">delete</a></p></td>
+      
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+      <td><a href="/admin_send_notification#why-us" >add</a></td>
+
+</div>
+</body>
+</html>
+{% endblock %}

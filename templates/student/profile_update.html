@@ -1,0 +1,133 @@
+{%extends "student/student_index.html" %}
+{% block body %}
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="card p-3" style="border-radius:20px;border:solid green">
+  <form action="/update_user_profile_post"  method="post" enctype="multipart/form-data">
+
+    <table class="table table-hover table-borderless table-striped">
+  <tbody>
+  <tr>
+      <th>&nbsp;upload photo</th>
+      <td colspan="2"><img style="border-radius:20px;border:solid green" src="{{ data['photo'] }}" width="200px" height="200px" required /><br>
+      <input name="pic" type="file" ></td>
+    </tr>
+    <tr>
+      <th>&nbsp;first name</th>
+<th><label for="textfield6">&nbsp;</label>
+  <input class="form-control" type="text" name="textfield6" id="textfield6" value="{{ data['first_name'] }}"></th></tr>
+    <tr>
+      <th>&nbsp;last name</th>
+      <th><label for="textfield">&nbsp;</label>
+        <input class="form-control" type="text" name="textfield" id="textfield" value="{{ data['last_name'] }}"></th>
+    </tr>
+  <tr>
+      <th>&nbsp;gender</th>
+    {% if data['gender']=="Male" %}
+      <td><input  type="radio" name="radio" id="radio" value="Male" checked>
+        Male <br><input type="radio" name="radio" id="radio2" value="Female" >
+        &nbsp;Female</td>
+    {% elif data['gender']=="Female" %}
+      <td><input  type="radio" name="radio" id="radio1" value="Male" >
+        Male <br><input type="radio" name="radio" id="radio3" value="Female" checked>
+        &nbsp;Female</td>
+    {% endif %}
+    </tr>
+    <tr>
+      <th colspan="2">&nbsp;address</th>
+
+
+      </tr>
+	  <tr>
+      <th>&nbsp;House Name</th>
+      <th><label for="textfield5">&nbsp;</label>
+        <input class="form-control" type="text" name="textfield55" id="textfield5" value="{{ data['house'] }}"></th>
+    </tr>
+      
+    </tr>
+	  <tr>
+      <th>&nbsp;place</th>
+      <th><label for="textfield5">&nbsp;</label>
+        <input class="form-control" type="text" name="textfield5" id="textfield5" value="{{ data['place'] }}"></th>
+    </tr>
+    
+    <tr>
+      <th>&nbsp;post</th>
+      <th><label for="textfield2">&nbsp;</label>
+        <input class="form-control" type="text" name="textfield2" id="textfield2" value="{{ data['post'] }}"></th>
+    </tr>
+    <tr>
+      <th>&nbsp;city</th>
+      <th><label for="textfield3">&nbsp;</label>
+        <input class="form-control" type="text" name="textfield3" id="textfield3" value="{{ data['city'] }}"></th>
+    </tr>
+    <tr>
+      <th>&nbsp;pin</th>
+      <th><label for="textfield4">&nbsp;</label>
+        <input class="form-control" type="text" maxlength="6" minlength="6" pattern="[0-9]{6}" name="textfield4" id="textfield4" value="{{ data['pin'] }}"></th>
+    </tr>
+
+
+	  <tr>
+      <th>&nbsp;date of birth</th>
+      <td><label for="textfield8">Text Field:</label>
+        <input  max="2006-09-13" class="form-control" type="date" name="textfield8" id="textfield8" value="{{ data['dob'] }}"></td>
+    </tr>
+    <tr>
+      <th>&nbsp;email</th>
+      <td><label for="textfield4" >&nbsp;</label>
+        <input class="form-control" type="email" name="mail" id="mail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ data['email'] }}"></td>
+    </tr>
+	  <tr>
+      <th>&nbsp;phone</th>
+      <td><label for="textfield7">&nbsp;</label>
+        <input class="form-control" type="text" maxlength="10" minlength="10"  pattern="[0-9]{10}" name="textfield7" id="textfield7" value="{{ data['phone'] }}">
+        <label for="number">&nbsp;</label>
+        </td>
+    </tr>
+	  
+	  <tr>
+      <th>&nbsp;nationality</th>
+      <td><label for="select">Select:</label>
+        <select name="select" id="select" value="{{ data['nationality'] }}">
+
+          <option>Indian</option>
+          <option>Afghan</option>
+          <option>Malaysian</option>
+          <option>Omani</option>
+
+        </select></td>
+    </tr>
+
+
+    <tr>
+      <th>&nbsp;qualification</th>
+      <td><label for="select2">Select:</label>
+        <select name="qual" id="select2" value="{{ data['qualification'] }}">
+          <option>DIPLOMA</option>
+          <option>PLUS TWO</option>
+          <option>UG</option>
+          <option>PG</option>
+        </select></td>
+    </tr>
+
+
+
+	  <tr align="center">
+      <th colspan="2" ><input type="submit" name="button" id="button" value="submit" class="btn btn-success">        &nbsp;</th>
+      
+    </tr>
+  </tbody>
+</table>
+
+</form>
+</div>
+</body>
+</html>
+{% endblock %}
+

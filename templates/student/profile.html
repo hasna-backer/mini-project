@@ -1,0 +1,72 @@
+{%extends "student/student_index.html" %}
+{% block body %}
+<html>
+<head>
+    <style>
+        .card{
+        transition:.5s;
+        }
+        .card:hover{
+        transform:scale(1.2);
+        border-radius:30px
+        }
+    </style>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body><form>
+    <div class="card p-3" style="border-radius:20px;border:solid green">
+    <table class="table table-hover table-borderless">
+  <tbody>
+   <tr>
+
+      <th colspan="2"><img style="border-radius:20px;border:solid green" src="{{ data['photo'] }}" width="200px" height="200px"/> </th>
+    </tr>
+    <tr>
+      <th>&nbsp;Name</th>
+<td>{{ data['first_name'] }} {{ data['last_name'] }}</td>
+
+   <tr>
+      <th>&nbsp;Gender</th>
+      <td>{{ data['gender'] }}</td>
+    </tr>
+    <tr>
+      <th>&nbsp;address</th>
+
+
+     <td>{{ data['house'] }} {{ data['place'] }} <br>{{ data['post'] }} ,{{ data['city'] }}</td>
+    </tr>
+    <tr>
+      <th>&nbsp;pin</th>
+      <td>{{ data['pin'] }}</td>
+    </tr>
+
+	  <tr>
+      <th>&nbsp;Email id</th>
+      <td>{{ data['email'] }}</td>
+    </tr>
+
+	  <tr>
+      <th>&nbsp;phone</th>
+      <td>{{ data['phone'] }}</td>
+    </tr>
+
+
+	  <tr>
+      <th>&nbsp;qualification</th>
+      <td>{{ data['qualification'] }}</td>
+    </tr>
+
+	  <tr>
+      <th colspan="2" align="center"><a href="/update_user_profile#why-us">Update Profile</a>        &nbsp;</th>
+
+    </tr>
+
+  </tbody>
+</table>
+        </div>
+</form>
+</body>
+</html>
+{% endblock %}
+

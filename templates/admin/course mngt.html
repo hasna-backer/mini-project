@@ -1,0 +1,60 @@
+{%extends "admin/adminindex.html" %}
+{% block body %}
+
+<!--<!doctype html>-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h2>Manage courses</h2><br>
+<form name="form1" method="post" >
+  <div class="card" style="border-radius:20px;border:solid green">
+    <div class="card-body">
+
+  <table width="200" border="0"  class="table table-hover table-borderless">
+    <tbody>
+      <tr style="background-color: black;color: white">
+        <th >#</th>
+	    <th>&nbsp;Course</th>
+        <th>&nbsp;Eligibility</th>
+        <th>Duration</th>
+        <th>Syllabus&nbsp;</th>
+        <th>Fees&nbsp;</th>
+        <th>Exam type&nbsp;</th>
+        <th></th>
+		   <td></td>
+		   
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>&nbsp;{{i['course_name']}}</td>
+        <td>&nbsp;<a href="{{i['eligibility']}}" download="">Download</a></td>
+        <td>&nbsp;{{i['duration']}}</td>
+
+        <td><a href="{{i['syllabus']}}" download="download">Download</a> </td>
+        <td>{{i['fees']}}</td>
+        <td>&nbsp;{{i['exam_type']}}</td>
+
+	    <td><p><a href="/admin_update_course/{{ i['course_id']}}#why-us" >update</a></p></td>
+        <td> <p><a href="/admin_delete_course/{{ i['course_id']}}#why-us" ONCLICK="return confirm('Are You Sure')">delete</a></p></td>
+      </tr>
+      {%endfor%}
+    <tr align="center">
+      <td colspan="9"><a href="/admin_add_course#why-us" class="btn btn-success">add</a></td>
+
+    </tr>
+    </tbody>
+  </table>
+    </div>
+      </div>
+    </div>
+
+</form>
+
+</body>
+</html>
+{% endblock %}

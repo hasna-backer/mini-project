@@ -1,0 +1,52 @@
+{%extends "admin/adminindex.html" %}
+{% block body %}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="table-responsive" class="card p-3" style="border-radius:20px;border:solid green">
+  <form><table class="table table-hover table-success table-active table-striped ">
+  <tbody>
+    <tr >
+      <th >#&nbsp;</th>
+      <th>&nbsp;name</th>
+
+      <th>&nbsp;email</th>
+       <th>&nbsp;phone number</th>
+      <th>gender&nbsp;</th>
+      <th>&nbsp;address</th>
+
+      <th>&nbsp;nationality</th>
+
+      <th>dob&nbsp;</th>
+      <th>&nbsp;photo</th>
+
+    </tr>
+
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{loop.index}}</td>
+      <td>&nbsp;{{i['first_name']}} {{i['last_name']}}</td>
+      <td>{{i['email']}}</td>
+      <td>&nbsp;{{i['phone']}}</td>
+      <td>&nbsp;{{i['gender']}}</td>
+      <td>&nbsp;{{i['house']}} {{i['place']}} <br>{{i['post']}} {{i['city']}}, {{i['pin']}}</td>
+
+
+
+      <td>&nbsp;{{i['nationality']}}</td>
+      <td>&nbsp;{{i['dob']}}</td>
+      <td>&nbsp;<img src="{{i['photo']}}" width="150px" height="150px"/> </td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+</form>
+</div>
+</body>
+</html>
+{% endblock %}

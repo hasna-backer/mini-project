@@ -1,0 +1,62 @@
+{%extends "admin/adminindex.html" %}
+{% block body %}
+<!--<!doctype html>-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="card p-3" style="border-radius:20px;border:solid green">
+  <form action="/admin_add_course_post#why-us" method="post" enctype="multipart/form-data"  name="form1" id="form1">
+  <table width="200" border="0" class="table table-hover table-borderless table-striped">
+  <tbody>
+    <tr>
+      <th>&nbsp;category</th>
+      <td>
+        <select name="select" id="jumpMenu" class="form-control">
+          {% for i in data %}
+          <option value="{{ i['cat_id']}}">{{ i['cname']}}</option>
+          {% endfor %}
+        </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;course</td>
+      <td><label for="textfield">&nbsp;</label>
+        <input type="text" name="textfield" id="textfield" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td>&nbsp;eligibility</td>
+      <td><input type="file" name="eligibility" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td>&nbsp;syllabus</td>
+      <td><input type="file" name="syllabus" class="form-control" required> </td>
+    </tr>
+    <tr>
+      <td>&nbsp;duration</td>
+      <td><label for="textfield2">&nbsp;</label>
+        <input type="text" name="textfield2" id="textfield2" class="form-control" required></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;fees</td>
+      <td><label for="textfield3">&nbsp;</label>
+        <input type="number" name="textfield3" id="textfield3" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td>&nbsp;exam</td>
+      <td><label for="textfield4">&nbsp;</label>
+        <input type="text" name="textfield4" id="textfield4" class="form-control" required></td>
+    </tr>
+  <tr align="center"><td  colspan="2"><input type="submit" name="button" id="button" value="add"  class="btn btn-success"></td>
+</tr>
+  </tbody>
+</table>
+</form>
+</div>
+</body>
+</html>
+
+{% endblock %}

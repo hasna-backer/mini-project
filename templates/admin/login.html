@@ -1,0 +1,37 @@
+{%extends "admin/adminindex.html" %}
+{% block body %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/login">
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <td>&nbsp;#</td>
+        <td>&nbsp;username</td>
+        <td><label for="textfield">&nbsp;</label>
+        <input type="text" name="uname" id="textfield">          &nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;password</td>
+        <td><label for="textfield2">&nbsp;</label>
+        <input type="text" name="pwd"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td align="center" colspan="2"><input type="submit" name="button" id="button" value="login"></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{%extends "student/student_index.html" %}
+{% block body %}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post">
+  <table width="200" class="table table-hover table-borderless">
+    <tbody>
+            <tr style="background-color:black;color:white">
+        <td>#</td>
+	    <td>&nbsp;course</td>
+        <td>&nbsp;eligibility</td>
+        <td>duration&nbsp;</td>
+
+        <td>syllabus&nbsp;</td>
+        <td>fees&nbsp;</td>
+        <td>exam type&nbsp;</td>
+        <td></td>
+
+
+      </tr>
+            {% for i in data %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>&nbsp;{{i['course_name']}}</td>
+        <td>&nbsp;<a href="{{i['eligibility']}}" download="">Download</a></td>
+        <td>&nbsp;{{i['duration']}}</td>
+
+        <td><a href="{{i['syllabus']}}" download="download">Download</a> </td>
+        <td>{{i['fees']}}</td>
+        <td>&nbsp;{{i['exam_type']}}</td>
+
+	    <td><p><a href="/student_reister_course/{{ i['course_id']}}">register</a></p></td>
+
+      </tr>
+      {%endfor%}
+
+
+
+<!--      {% for i in data %}-->
+<!--      <tr>-->
+<!--        <td>{{loop.index}}</td>-->
+<!--        <td>&nbsp;{{i['course_name']}}</td>-->
+<!--        <td>&nbsp;{{i['eligibility']}}</td>-->
+<!--        <td>&nbsp;{{i['duration']}}</td>-->
+
+<!--        <td>{{i['syllabus']}}</td>-->
+<!--        <td>{{i['fees']}}</td>-->
+<!--        <td>&nbsp;{{i['exam_type']}}</td>-->
+
+<!--	    <td><p><a href="#">register</a></p></td>-->
+
+<!--      </tr>-->
+<!--      {%endfor%}-->
+    <tr>
+    </tbody>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
